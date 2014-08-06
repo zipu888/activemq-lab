@@ -31,6 +31,7 @@ public class MyMessageSender {
         msg.setMessageCode(110);
         msg.setMessageContent("有色狼");
         Timer t =new Timer("test");
+        //循环发送
         t.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {

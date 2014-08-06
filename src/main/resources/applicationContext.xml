@@ -43,19 +43,21 @@
     <!--</bean>-->
 
     <!--定义监听器-->
-    <bean id="myMessageLisenner" class="com.xiaohao.activemq.lisenner.MyMessageLisenner"></bean>
+    <bean id="myRequestLisenner" class="com.xiaohao.activemq.receiver.MyRequestLisenner"></bean>
+    <!--定义监听器-->
+    <bean id="myRePlyLisenner" class="com.xiaohao.activemq.sender.MyRePlyLisenner"></bean>
     <!-- 监听容器 -->
     <bean id="jmsContainerRequest" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="connectionFactory" />
         <property name="destination" ref="requestDestination" />
-        <property name="messageListener" ref="myMessageLisenner" />
+        <property name="messageListener" ref="myRequestLisenner" />
     </bean>
 
     <!-- 应答监听容器 -->
     <bean id="jmsContainerReply" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="connectionFactory" />
         <property name="destination" ref="replyDestination" />
-        <property name="messageListener" ref="myMessageLisenner" />
+        <property name="messageListener" ref="myRePlyLisenner" />
     </bean>
 
 
