@@ -10,7 +10,7 @@
     <context:annotation-config></context:annotation-config>
     <!-- 配置JMS连接工厂 -->
     <bean id="connectionFactory" class="org.apache.activemq.spring.ActiveMQConnectionFactory">
-        <property name="brokerURL" value="tcp://localhost:61616" />
+        <property name="brokerURL" value="stomp://localhost:61613" />
     </bean>
 
     <!-- 配置JMS模版 -->
